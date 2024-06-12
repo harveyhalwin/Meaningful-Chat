@@ -2,19 +2,19 @@ const data = {
   interaction: [
     {
       text: "Can you help me with something",
-      type: "prompt",
+      role: "user",
     },
     {
       text: "Sure, What do you need help with ?",
-      type: "response",
+      role: "system",
     },
     {
       text: "How can I create a new account with Meaningful ?",
-      type: "prompt",
+      role: "user",
     },
     {
       text: "Sure, go ahead to Register Page on the website",
-      type: "response",
+      role: "system",
     },
   ],
   userName: "Micheal Scott",
