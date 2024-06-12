@@ -1,3 +1,5 @@
+import { faker } from "@faker-js/faker"
+
 const data = {
   interaction: [
     {
@@ -28,4 +30,28 @@ const data = {
   userName: "Micheal Scott",
 }
 
-export default data
+const make_faker_data = () => {
+  let data = []
+  const max_datasets = faker.number.int({ min: 5, max: 20 })
+  for (let i = 0; i < max_datasets; i++) {
+    const role_decider = faker.number.int({ min: 1, max: 3 })
+    let intermediate_data: any = {}
+
+    if (role_decider === 1) {
+      intermediate_data["role"] = "user"
+      intermediate_data["text"] = faker.lorem.paragraph(1)
+    } else if (role_decider === 2) {
+      intermediate_data["role"] = "system"
+      intermediate_data["text"] = faker.lorem.paragraph(1)
+    } else {
+      intermediate_data["role"] = "asset"
+      intermediate_data["url"] = faker.image.url()
+    }
+    data.push(intermediate_data)
+  }
+  return { interaction: data }
+}
+
+const faker_data = make_faker_data()
+
+export { faker_data, data }

@@ -1,4 +1,4 @@
-import data from "@/app/_mocks/mock_data"
+import { faker_data } from "@/app/_mocks/mock_data"
 import AssetModal from "./assetModal"
 import { useState } from "react"
 
@@ -6,9 +6,12 @@ const Bubbles = () => {
   const [assetUrl, setAssetUrl] = useState("")
   const [showAssetModal, setShowAssetModal] = useState(false)
 
+  // TODO: Only for testing on local with mock data
+  const chat = faker_data
+
   return (
     <div className="grid grid-cols-1 h-fit gap-2">
-      {data["interaction"].map((interact) =>
+      {chat["interaction"].map((interact) =>
         interact.role !== "asset" ? (
           <p
             className={`
