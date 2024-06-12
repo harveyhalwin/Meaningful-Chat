@@ -6,11 +6,11 @@ const Bubbles = () => {
       {data["interaction"].map((interact) => (
         <p
           className={`
-          bg-gray-100 py-2 px-4 
+          rounded-bl-2xl rounded-br-2xl py-2 px-4 
             ${
-              interact.type === "prompt"
-                ? "justify-self-end rounded-tl-2xl rounded-bl-2xl rounded-br-2xl"
-                : "justify-self-start rounded-bl-2xl rounded-br-2xl rounded-tr-2xl"
+              interact.role === "user"
+                ? "justify-self-end rounded-tl-2xl bg-sky-100"
+                : "justify-self-start rounded-tr-2xl bg-gray-100"
             }
           `}
         >
