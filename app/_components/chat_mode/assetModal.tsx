@@ -8,7 +8,7 @@ interface Props {
 const AssetModal = ({ url, showAssetModal }: Props) => {
   return (
     <div
-      className="flex items-center justify-center z-10 bg-slate-50 w-screen h-screen absolute top-0 left-0"
+      className="flex items-center justify-center z-10 bg-slate-800/[.80] w-screen h-screen absolute top-0 left-0"
       onClick={() => showAssetModal(false)}
     >
       <img
